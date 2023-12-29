@@ -174,6 +174,12 @@ In print
   {{book.publisher}}
 
 {% endfor %}
+- Juan Antonio Hernandez Ramos and Javier Escoto Lopez
+  2020
+  [How to learn Applied Mathematics through modern Fortran](https://www.amazon.com/Applied-Mathematics-through-modern-FORTRAN/dp/B0851LN6HT)
+  1st Edition
+  Madrid, Spain.
+  Independently published
 :::
 
 :::{toctree}
