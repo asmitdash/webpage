@@ -123,8 +123,8 @@
   github: Cambridge-ICCS/FTorch
   description: Allows users to interface into the PyTorch machine learning library
   categories: interfaces numerical scientific
-  tags:
-  license:
+  tags: machine-learning
+  license: MIT
   version: none
 
 - name: forpy
@@ -137,7 +137,7 @@
 
 - name: flook
   github: ElectronicStructureLibrary/flook
-  desciption: Library for running an embedded Lua interpreter
+  description: Library for running an embedded Lua interpreter
   categories: interfaces
   tags: lua
 
@@ -150,54 +150,100 @@
   version: none
 
 - name: aotus
-  url: https://osdn.net/projects/apes/scm/hg/aotus/
-  description: Fortran wrapper around the C-API of the Lua scripting language
-  categories: interfaces
-  tags: lua
+  github: apes-suite/aotus
+  description: Advanced Options and Tables in Universal Scripting
+  categories: interfaces io
+  tags: lua configuration
   license: MIT
-  version: none
 
 - name: fortran-curl
   github: interkosmos/fortran-curl
   description: Fortran 2008 interface bindings to libcurl
   categories: interfaces
-  tags: https curl imap libcurl smtp gopher
+  tags: curl gopher ftp http https imap libcurl mqtt smtp
+  license: ISC
+
+- name: fortran-lmdb
+  github: interkosmos/fortran-lmdb
+  description: Fortran 2018 interface bindings to the OpenLDAP Lightning Memory-Mapped Database (LMDB)
+  categories: interfaces
+  tags: database
+  license: ISC
 
 - name: fortran-lua53
   github: interkosmos/fortran-lua53
   description: Fortran 2008 interface bindings to Lua 5.3
   categories: interfaces
   tags: lua
+  license: ISC
+
+- name: fortran-lua54
+  github: interkosmos/fortran-lua54
+  description: Fortran 2008 interface bindings to Lua 5.4
+  categories: interfaces
+  tags: lua
+  license: ISC
+
+- name: fortran-modbus
+  github: interkosmos/fortran-modbus
+  description: Fortran 2018 interface bindings to libmodbus
+  categories: interfaces
+  tags: modbus
+  license: ISC
+
+- name: fortran-ncurses
+  github: interkosmos/fortran-ncurses
+  description: Fortran 2018 interface bindings to ncurses
+  categories: interfaces
+  tags: ncurses
+  license: ISC
 
 - name: fortran-sqlite3
   github: interkosmos/fortran-sqlite3
   description: Fortran 2018 interface bindings to SQLite 3
   categories: interfaces
   tags: sql sqlite database
+  license: ISC
 
 - name: fortran-tcl86
   github: interkosmos/fortran-tcl86
   description: Fortran 2018 interface bindings to Tcl/Tk 8.6
   categories: interfaces
   tags: tcl tk gui
+  license: ISC
 
 - name: fortran-unix
   github: interkosmos/fortran-unix
   description: Fortran 2008 interface bindings to selected POSIX and SysV types, functions, and routines on 64-bit Unix-like operating systems
   categories: interfaces
   tags: unix linux freebsd os posix system
+  license: ISC
+
+- name: fortran-xmpp
+  github: interkosmos/fortran-xmpp
+  description: Fortran 2018 interface bindings to the XMPP client library libstrophe
+  categories: interfaces
+  tags: xmpp jabber libstrophe
+  license: ISC
 
 - name: fortran-zlib
   github: interkosmos/fortran-zlib
   description: Fortran 2018 interface bindings to selected zlib functions
   categories: interfaces
   tags: zlib compression deflate
+  license: ISC
+
+- name: fortran-zstd
+  github: interkosmos/fortran-zstd
+  description: Fortran 2018 interface bindings to the Zstandard compression library
+  categories: interfaces
+  tags: zstd compression
+  license: ISC
 
 - name: tcp-client-server
   github: modern-fortran/tcp-client-server
-  description: A minimal Fortran TCP client and server demonstrating c interoperability
+  description: A minimal Fortran TCP client and server demonstrating C interoperability
   categories: interfaces examples
-  tags:
   version: none
 
 - name: clfortran
@@ -208,11 +254,17 @@
   version: none
   license: GPL-3.0
 
+- name: M_ncurses
+  github: urbanjost/M_ncurses
+  description: Fortran interface to the ncurses C library
+  categories: interfaces
+  tags: ncurses
+  version: none
+
 - name: M_process
   github: urbanjost/M_process
   description: Read and write lines to or from a process from Fortran via a C wrapper
   categories: interfaces
-  tags:
   version: none
 
 - name: M_system
@@ -297,6 +349,13 @@
   license: LGPL-3.0-or-later
   version: 1.3
 
+- name: preCICE
+  github: precice/precice
+  description: A coupling library for partitioned multi-physics simulations, including, but not restricted to fluid-structure interaction and conjugate heat transfer simulations.
+  categories: interfaces scientific
+  tags: cpp c python julia matlab rust mpi
+  license: LGPL-3.0
+
 # --- Compiler
 
 - name: hipfort
@@ -348,6 +407,20 @@
   tags: unit testing
   license: NASA-1.3
 
+- name: test-drive
+  github: fortran-lang/test-drive
+  description: The simple testing framework
+  categories: programming
+  tags: unit testing
+  version: 0.5.0
+  license: MIT AND Apache-2.0
+
+- name: setup-fortran
+  github: fortran-lang/setup-fortran
+  description: GitHub action to setup Fortran compiler and toolchain
+  categories: programming
+  tags: continuous-integration
+
 - name: erloff
   gitlab: everythingfunctional/erloff
   description: Errors and logging for fortran
@@ -365,7 +438,6 @@
   github: fortesg/fortrancallgraph
   description: Static source code analysis tool for Fortran
   categories: programming
-  tags:
   license: GPL-3.0
 
 - name: Tapenade
@@ -375,6 +447,14 @@
   tags: algorithmic derivative ad
   license: MIT
   version: 3.16-v2
+
+- name: Differentia
+  github: Nicholaswogan/Differentia
+  description: Computes derivatives, gradients and Jacobians of Fortran functions/subroutines using forward automatic differentiation.
+  categories: programming numerical
+  tags: algorithmic derivative AD autodiff
+  license: MIT
+  version: 0.1.4
 
 - name: camfort
   github: camfort/camfort
@@ -431,6 +511,26 @@
   description: Comprehensive error handling framework for Modern Fortran
   categories: programming
   tags: errors logging fpm
+
+- name: PSyclone
+  github: stfc/PSyclone
+  description: Domain-specific compiler and code transformation system for Finite Difference/Volume/Element Earth-system models in Fortran
+  categories: programming scientific
+  tags: formatter compiler transformer
+
+- name: Fortitude
+  github: PlasmaFAIR/fortitude
+  description: A fast Ruff-like linting tool
+  categories: programming
+  license: MIT
+  tags: linter
+
+- name: tree-sitter-fortran
+  github: stadelmanma/tree-sitter-fortran
+  description: Fortran 90 grammar for the Tree-sitter language parsing framework
+  categories: programming
+  tags: parser
+  license: MIT
 
 # --- Data types ---
 
@@ -503,14 +603,12 @@
   github: jannisteunissen/lookup_table_fortran
   description: Linear lookup table implemented in modern Fortran
   categories: data-types
-  tags:
   version: none
 
 - name: FyCollections
   url: https://bitbucket.org/aradi/fycollections/src/develop/
   description: generic collection templates for Fortran
   categories: data-types
-  tags:
   license: BSD-2-Clause
 
 # --- Strings ---
@@ -545,6 +643,7 @@
   description: Fortran 2018 interface bindings to PCRE2
   categories: strings interfaces
   tags: pcre pcre2 regex
+  license: ISC
 
 # --- File input / output ---
 
@@ -581,7 +680,6 @@
   github: szaghi/VTKFortran
   description: Library to parse and emit files conforming VTK (XML) standard
   categories: io
-  tags:
   license: GPL-3.0
   version: none
 
@@ -596,7 +694,6 @@
   github: andreww/fox
   description: A Fortran XML library
   categories: io
-  tags:
   license: BSD-3-Clause
   version: none
 
@@ -657,7 +754,6 @@
   github: jannisteunissen/config_fortran
   description: Configuration file parser for Fortran
   categories: io
-  tags:
   version: none
 
 - name: parff
@@ -734,8 +830,14 @@
   github: urbanjost/M_draw
   description: Low-level vector graphics library
   categories: graphics
-  tags:
   version: none
+
+- name: fortran-grace
+  github: interkosmos/fortran-grace
+  description: Fortran 2018 interfaces to the scientific plotting tool Grace/XmGrace
+  categories: graphics interfaces
+  tags: grace xmgrace
+  license: ISC
 
 - name: fortran-motif
   github: interkosmos/fortran-motif
@@ -744,19 +846,26 @@
   tags: x11 gui unix
   license: ISC
 
+- name: fortran-raylib
+  github: interkosmos/fortran-raylib
+  description: Fortran 2018 interface bindings to raylib 5.5
+  categories: graphics interfaces
+  tags: graphics opengl games
+  license: ISC
+
 - name: fortran-sdl2
   github: interkosmos/fortran-sdl2
   description: A collection of ISO C binding interfaces to Simple DirectMedia Layer 2.0 (SDL 2.0), for multimedia and game programming in Fortran
   categories: graphics interfaces
   tags: graphics opengl games
-  version: none
+  license: ISC
 
 - name: fortran-xlib
   github: interkosmos/fortran-xlib
   description: A collection of ISO C binding interfaces to Xlib for Fortran 2003
   categories: graphics interfaces
   tags: x11 xlib gui mandelbrot raycast wireframe
-  version: none
+  license: ISC
 
 - name: Illustrate
   github: ccsb-scripps/illustrate
@@ -837,6 +946,12 @@
   tags: back propagation coarray
   version: none
 
+- name: fiats
+  github: BerkeleyLab/fiats
+  description: A deep learning library for use in high-performance computing applications in modern Fortran
+  categories: numerical
+  tags: machine-learning
+
 - name: ParaMonte
   github: cdslaborg/paramonte
   description: A general-purpose high-performance MPI/Coarray-parallel Monte Carlo simulation library implemented in Fortran 2018 with interfaces to C/C++/Fortran/MATLAB/Python
@@ -910,14 +1025,12 @@
   github: aamaricci/SciFortran
   description: collection of fortran modules and procedures for scientific calculations.
   categories: numerical
-  tags:
   version: none
 
 - name: Los Alamos Grid Toolbox (LaGriT)
   github: lanl/LaGriT
   description: a library of user callable tools that provide mesh generation, mesh optimization and dynamic mesh maintenance
   categories: numerical
-  tags:
   license: BSD
 
 - name: DBCSR
@@ -1067,6 +1180,26 @@
   categories: numerical
   tags: quadpack quadpack2 integrals
 
+- name: qr_mumps
+  gitlab: qr_mumps/qr_mumps
+  description: A parallel multifrontal solver for sparse linear systems based on QR and Cholesky decomposition
+  categories: numerical
+  tags: QR Cholesky sparse multifrontal least-squares
+
+- name: athena
+  github: nedtaylor/athena
+  description: A library for building, training and testing feed-forward neural networks.
+  categories: numerical
+  tags: machine-learning convolutional-neural-networks
+  license: MIT
+
+- name: dtFFT
+  github: ShatrovOA/dtFFT
+  description: a high-performance library designed for parallel data transpositions and optional Fast Fourier Transforms (FFTs) in multidimensional computing environments.
+  categories: numerical
+  tags: mpi cuda fft parallel distributed-memory
+  license: GPL-3.0
+
 # --- Scientific codes ---
 
 - name: astro-fortran
@@ -1116,7 +1249,7 @@
 
 - name: lesgo
   github: lesgo-jhu/lesgo
-  descriptipon: The Large-Eddy Simulation framework from the Turbulence Research Group at Johns Hopkins University
+  description: The Large-Eddy Simulation framework from the Turbulence Research Group at Johns Hopkins University
   categories: scientific
   version: none
 
@@ -1150,6 +1283,7 @@
 
 - name: fortran-machine
   github: mapmeld/fortran-machine
+  description: A Fortran Model-View-Controller web platform
   categories: other
 
 - name: Nek5000
@@ -1273,12 +1407,12 @@
   version: 1.0.4
 
 - name: MESA
-  url: http://mesa.sourceforge.net/
+  github: MESAHub/mesa
   description: Modules for Experiments in Stellar Astrophysics
   categories: scientific
   tags: stellar astrophysics
-  license: GPL-2
-  version: 15140
+  license: LGPL-2.1
+  version: 24.08.1
 
 - name: Wannier90
   github: wannier-developers/wannier90
@@ -1323,6 +1457,14 @@
   categories: scientific
   tags: finite-difference hydrodynamics magnetic-field particles
   license: GPL-2.0
+
+- name: PHANTOM
+  github: danieljprice/phantom
+  description: Smoothed particle hydrodynamics and magnetohydrodyanmics for astrophysics simulations
+  categories: scientific
+  tags: astrophysics SPH MHD hydrodynamics
+  license: GPL-3.0
+
 
 - name: MOM6
   github: NOAA-GFDL/MOM6
@@ -1383,7 +1525,7 @@
   github: MITgcm/MITgcm
   description: M.I.T General Circulation Model master code and documentation repository
   categories: scientific
-  keywords: ocean-modelling gfd automatic-differentiation data-assimilation exoplanets climate-science
+  tags: ocean-modelling gfd automatic-differentiation data-assimilation exoplanets climate-science
 
 - name: Specfem3D
   github: geodynamics/specfem3d
@@ -1528,6 +1670,20 @@
   tags: electronic-structure quantum-chemistry casscf
   license: Apache-2.0
 
+- name: raffle
+  github: ExeQuantCode/RAFFLE
+  description: Package for predicting material interface structures
+  categories: scientific
+  tags: material structure phase atomic molecular-modeling
+  license: GPL-3.0
+
+- name: GEOS-Chem
+  github: geoschem/geos-chem
+  description: Atmospheric chemistry model 
+  categories: scientific
+  tags: climate chemistry atmospheric-modelling atmospheric-chemistry 
+  license: MIT
+
 # --- Examples / demos / templates ---
 
 - name: Fortran 2018 examples
@@ -1540,7 +1696,6 @@
   github: farhanjk/FortranPatterns
   description: Popular design patterns implemented in Fortran
   categories: examples
-  tags:
   version: none
 
 - name: Numerical methods in fortran
@@ -1591,4 +1746,12 @@
   categories: numerical
   tags: quasi-newton-optimization stochastic-optimization acm-toms
   license: MIT
+  version: none
+
+- name: FLAME
+  gitlab: flame-code/FLAME
+  description: a library for atomistic modeling environments.
+  categories: scientific
+  tags: machine-learning interatomic-potential crystal-structure-prediction electrostatic-energy-forces ions
+  license: GPL-2.0
   version: none

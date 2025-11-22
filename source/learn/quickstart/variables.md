@@ -23,7 +23,7 @@ the variable type and any other variable attributes.
 The syntax for declaring variables is:
 
 ```
-<variable_type> :: <variable_name>
+<variable_type> :: <variable_name>, <variable_name>, ...
 ```
 
 where `<variable_type>` is one of the built-in variable types listed above and
@@ -39,7 +39,7 @@ program variables
   implicit none
 
   integer :: amount
-  real :: pi
+  real :: pi, e ! two `real` variables declared
   complex :: frequency
   character :: initial
   logical :: isOkay
@@ -104,16 +104,16 @@ In a similar way, we can read values from the command window
 using the `read` statement:
 
 ```{play-code-block} fortran
-program read_value
+program read_values
   implicit none
-  integer :: age
+  real :: x, y
 
-  print *, 'Please enter your age: '
-  read(*,*) age
+  print *, 'Please enter two numbers. '
+  read(*,*) x, y
 
-  print *, 'Your age is: ', age
+  print *, 'The sum and product of the numbers are ', x+y, x*y
 
-end program read_value
+end program read_values
 ```
 
 This input source is commonly referred to as `standard input` or `stdin`.
@@ -138,11 +138,7 @@ The usual set of arithmetic operators are available, listed in order of preceden
 program arithmetic
   implicit none
 
-  real :: pi
-  real :: radius
-  real :: height
-  real :: area
-  real :: volume
+  real :: pi, radius, height, area, volume
 
   pi = 3.1415927
 
@@ -180,7 +176,7 @@ program float
 
   float32 = 1.0_sp  ! Explicit suffix for literal constants
   float64 = 1.0_dp
-
+  print*, float32, float64
 end program float
 ```
 
@@ -201,3 +197,30 @@ end program float
 
 In the next part we will learn how to use arrays for storing more than one
 value in a variable.
+
+## Local scope variables with `block` construct
+The 2008 Fortran standard introduced the notion of `block` which enables using local scope variables within a program or procedure.
+
+**Example:**
+
+```{play-code-block} fortran
+module your_module
+    implicit none
+    integer :: n = 2
+end module
+
+program main
+    implicit none
+    real :: x
+
+    block
+        use your_module, only: n ! you can import modules within blocks
+        real :: y ! local scope variable
+        y = 2.0
+        x = y ** n
+        print *, y
+    end block
+    ! print *, y ! this is not allowed as y only exists during the block's scope
+    print *, x  ! prints 4.00000000
+end program
+```

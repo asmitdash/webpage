@@ -79,7 +79,7 @@ Get a taste of Fortran in an interactive playground in the browser.
 
 ```{card}
 :link-type: url
-:link: https://play.fortran-lang.org/
+:link: https://dev.lfortran.org/
 :class-card: sd-btn
 :class-body: sd-p-1 sd-text-center sd-font-weight-bold sd-text-info sd-btn-primary sd-text-light sd-btn
 :shadow: none
@@ -145,7 +145,22 @@ On the web
 
 :::{div} sd-fs-4 sd-font-weight-bold sd-text-primary
 
-Online Courses
+Training providers
+:::
+
+:::{jinja} conf
+
+{% for course in reference_course_providers %}
+
+- [{{course.name}}]({{course.url}}) {{course.description}}
+
+{% endfor %}
+:::
+
+:::{div} sd-fs-4 sd-font-weight-bold sd-text-primary
+
+
+Online Course Materials
 :::
 
 :::{jinja} conf
@@ -159,6 +174,19 @@ Online Courses
 
 :::{div} sd-fs-4 sd-font-weight-bold sd-text-primary
 
+E-books
+:::
+
+:::{jinja} conf
+
+{% for course in reference_ebooks %}
+
+- [{{course.name}}]({{course.url}}) {{course.description}}
+
+{% endfor %}
+:::
+
+:::{div} sd-fs-4 sd-font-weight-bold sd-text-primary
 In print
 :::
 
@@ -185,4 +213,6 @@ learn/building_programs/index
 learn/best_practices/index
 learn/intrinsics/index
 learn/rosetta_stone
+learn/oop_features_in_fortran/index
+learn/f95_features/index
 :::

@@ -51,7 +51,7 @@ with open(data_files["intrinsics"], "r", encoding="utf-8") as f:
 # -- Project information -----------------------------------------------------
 
 project = "Fortran-lang.org website"
-copyright = "2020-2022, Fortran Community"
+copyright = "2020-2024, Fortran Community"
 author = "Fortran Community"
 
 # The full version, including alpha/beta/rc tags
@@ -121,6 +121,7 @@ jinja_contexts = {
 # a list of builtin themes.
 #
 html_theme = "pydata_sphinx_theme"
+html_show_sourcelink = False
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -141,15 +142,15 @@ html_theme_options = {
     "show_prev_next": False,
     "show_nav_level": 1,
     "show_toc_level": 0,
-    "footer_items": ["copyright"],
     "navbar_align": "right",
-    "navbar_start": ["navbar-logo","theme-switcher.html","version-switcher"],
+    "navbar_start": ["navbar-logo","theme-switcher.html"],
     "switcher": {
-        "json_url":"https://fortran-lang.org/",   
+        "json_url": "https://fortran-lang.org/_static/data.json",  # shifted to custom local switcher
         "version_match": language,
     },
-    "page_sidebar_items": ["inpage_toc.html"],
-    "navbar_end": ["navbar-icon-links",  "search-field.html"],
+    "primary_sidebar_end": [],
+    "secondary_sidebar_items": ["inpage_toc.html"],
+    "navbar_end": ["navbar-icon-links","version-switcher"],
     "search_bar_text": "Search",
     "icon_links": [
         {
@@ -169,7 +170,7 @@ html_theme_options = {
         },
         {
             "name": "RSS",
-            "url": "https://fortran-lang.org/en/news/atom.xml",
+            "url": "https://fortran-lang.org/news/atom.xml",
             "icon": "fas fa-rss",
         },
     ],
@@ -177,14 +178,14 @@ html_theme_options = {
 
 html_sidebars = {
     "news": [
-        "tagcloud.html",
-        "archives.html",
-        "recentposts.html",
+        "ablog/tagcloud.html",
+        "ablog/archives.html",
+        "ablog/recentposts.html",
     ],
     "news/**": [
-        "postcard.html",
-        "recentposts.html",
-        "archives.html",
+        "ablog/postcard.html",
+        "ablog/recentposts.html",
+        "ablog/archives.html",
     ],
     "learn/**": ["sidebar-nav-bs.html"],
     "learn": [],
@@ -204,8 +205,8 @@ fontawesome_link_cdn = True
 
 blog_path = "news"
 blog_post_pattern = "news/**"
-blog_baseurl = "https://fortran-lang.org/en/"
-html_baseurl = "https://fortran-lang.org/en/"
+blog_baseurl = "https://fortran-lang.org"
+html_baseurl = "https://fortran-lang.org"
 sitemap_url_scheme = "{link}"
 post_redirect_refresh = 1
 post_auto_image = 1
